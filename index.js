@@ -6,16 +6,15 @@
  * - config: cli config
  */
 const pluginHandler = async options => {
-  console.log(options)
-  const { data, filePath, config, result  } = options;
-  // if (!data.code) return null
-  // // {panelDisplay: {panelName: '', panelValue: '', panelType: ''}}
-  // const panelDisplay = data.code.panelDisplay || []
-  // for (const item of panelDisplay) {
-  //   item.panelValue = item.panelValue.replace(/\.\/images\//g, function () {
-  //     return '../../images/'
-  //   })
-  // }
+  const { data, filePath, config, result  } = options
+  if (!data.code) return null
+  // {panelDisplay: {panelName: '', panelValue: '', panelType: ''}}
+  const panelDisplay = data.code.panelDisplay || []
+  for (const item of panelDisplay) {
+    item.panelValue = item.panelValue.replace(/\.\/images\//g, function () {
+      return '../../images/'
+    })
+  }
 
   return { data, filePath, config, result }
 }
