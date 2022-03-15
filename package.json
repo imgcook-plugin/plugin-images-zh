@@ -1,6 +1,6 @@
 {
   "name": "@imgcook/plugin-images-zh",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "plugin-images-zh",
   "main": "index.js",
   "scripts": {
